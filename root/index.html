@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMAR - Gestión y Monitoreo de Acceso Residencial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #004080, #0066cc);
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 15px;
+            width: 250px;
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .service {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px;
+            text-align: center;
+            flex: 1 1 calc(33.333% - 30px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .service img {
+            width: 120px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+        }
+
+        .service h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            color: #004080;
+        }
+
+        .service p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .testimonials {
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            display: flex;
+            align-items: center;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-style: italic;
+        }
+
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+        }
+
+        .testimonial h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #004080;
+        }
+
+        footer {
+            background: #004080;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .map {
+            margin-top: 40px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .map iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .service {
+                flex: 1 1 100%;
+            }
+
+            .testimonial {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .testimonial img {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/logo gmar.png" alt="Logo GMAR" class="logo">        
+        <p>Gestión y Monitoreo de Acceso a Residenciales</p>
+        <nav>
+            <a href="#servicios">Servicios</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#ubicacion">Ubicación</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <div class="services">
+            <div class="service">
+                <img src="img/img_1.png" alt="Control de Acceso">
+                <h3>Control de Acceso</h3>
+                <p>Implementamos soluciones modernas para garantizar la seguridad en entradas y salidas.</p>
+            </div>
+            <div class="service">
+                <img src="img/img_2.png" alt="Monitoreo 24/7">
+                <h3>Monitoreo 24/7</h3>
+                <p>Supervisión constante para proteger residencias y áreas comunes.</p>
+            </div>
+            <div class="service">
+                <img src="img/img_3.png" alt="Registro Digital">
+                <h3>Registro Digital</h3>
+                <p>Control eficiente de visitas con registros electrónicos en tiempo real.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <h2>Nosotros</h2>
+        <p>En GMAR, nos dedicamos a ofrecer soluciones integrales de gestión y monitoreo para residenciales. Nuestra misión es brindar tranquilidad y seguridad a través de tecnología avanzada y servicios confiables. Con años de experiencia, estamos comprometidos con la excelencia y la satisfacción de nuestros clientes.</p>
+    </section>
+
+    <section id="testimonios" class="testimonials">
+        <h2>Testimonios</h2>
+        <div class="testimonial">
+            <img src="img/hombre1.jpeg" alt="Juan Pérez">
+            <div>
+                <h3>Juan Pérez</h3>
+                <p>"Gracias a GMAR, nuestra comunidad se siente mucho más segura. El servicio es excepcional y confiable."</p>
+            </div>
+        </div>
+        <div class="testimonial">
+            <img src="img/mujer1.jpeg" alt="María López">
+            <div>
+                <h3>María López</h3>
+                <p>"El monitoreo 24/7 nos ha dado una gran tranquilidad. Altamente recomendados."</p>
+            </div>
+        </div>
+        <div class="testimonial">
+            <img src="img/hombre2.jpeg" alt="Carlos García">
+            <div>
+                <h3>Carlos García</h3>
+                <p>"La implementación del registro digital ha sido un cambio positivo para nuestra residencia. Muy satisfecho."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ubicacion" class="map">
+        <h2>Ubicación</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509719!2d-122.41941648468193!3d37.77492927975921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064df2f123f%3A0x3456!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1617701939170!5m2!1sen!2sus" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Deseas más información? Contáctanos y descubre cómo podemos ayudarte a gestionar y monitorear el acceso de tu residencial de manera eficiente.</p>
+        <p><strong>Email:</strong> contacto@gmar.com</p>
+        <p><strong>Teléfono:</strong> +1 (849) 457-8932</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 GMAR - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
