@@ -3,27 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <title>GMAR - Gestión y Monitoreo de Acceso Residencial</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
             line-height: 1.6;
-            background-color: #f9f9f9;
+            background-color: #f4f7fc;
             color: #333;
+            font-size: 16px;
         }
 
         header {
-            background: linear-gradient(135deg, #004080, #0066cc);
+            background: linear-gradient(135deg, #003366, #0066cc);
             color: #fff;
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
@@ -34,19 +39,26 @@
         }
 
         header h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 10px;
         }
 
+        header p {
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
         nav {
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         nav a {
             color: #fff;
-            margin: 0 15px;
+            margin: 0 20px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.1em;
+            text-transform: uppercase;
             transition: color 0.3s;
         }
 
@@ -55,69 +67,80 @@
         }
 
         section {
-            padding: 40px 20px;
+            padding: 60px 30px;
             max-width: 1200px;
             margin: 20px auto;
             background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #003366;
         }
 
         .services {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .service {
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 15px;
+            background: #f8f8f8;
+            border-radius: 15px;
+            padding: 30px;
             text-align: center;
-            flex: 1 1 calc(33.333% - 30px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33.333% - 20px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .service:hover {
             transform: translateY(-10px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
         .service img {
             width: 120px;
             margin-bottom: 20px;
             border-radius: 50%;
-            border: 2px solid #ddd;
+            border: 3px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .service h3 {
-            margin-bottom: 10px;
-            font-size: 1.5em;
-            color: #004080;
+            font-size: 1.8em;
+            color: #003366;
+            margin-bottom: 15px;
         }
 
         .service p {
-            font-size: 1em;
+            font-size: 1.1em;
             color: #666;
+            font-weight: 300;
         }
 
         .testimonials {
-            margin-top: 40px;
+            margin-top: 50px;
+            background: #f9f9f9;
+            padding: 40px 20px;
+            border-radius: 15px;
         }
 
         .testimonial {
             display: flex;
             align-items: center;
-            background: #f9f9f9;
+            background: #fff;
             border: 1px solid #ddd;
             border-radius: 12px;
-            padding: 20px;
-            margin: 15px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             font-style: italic;
         }
 
@@ -130,18 +153,18 @@
         }
 
         .testimonial h3 {
+            font-size: 1.4em;
+            color: #003366;
             margin-bottom: 10px;
-            font-size: 1.2em;
-            color: #004080;
         }
 
         footer {
-            background: #004080;
+            background: #003366;
             color: #fff;
             text-align: center;
-            padding: 15px 0;
+            padding: 25px 0;
             margin-top: 40px;
-            font-size: 0.9em;
+            font-size: 1em;
         }
 
         footer p {
@@ -156,31 +179,73 @@
 
         .map iframe {
             width: 100%;
-            max-width: 600px;
-            height: 300px;
+            max-width: 800px;
+            height: 350px;
             border: 0;
-            border-radius: 10px;
+            border-radius: 15px;
         }
 
-        @media (max-width: 768px) {
-            .service {
-                flex: 1 1 100%;
-            }
+        /* Estilos para el botón flotante de WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            padding: 20px;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
 
-            .testimonial {
-                flex-direction: column;
-                text-align: center;
-            }
+        .whatsapp-button:hover {
+            background-color: #128c7e;
+        }
 
-            .testimonial img {
-                margin-bottom: 15px;
-            }
+        /* Estilos para el formulario de contacto */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form button {
+            padding: 12px 20px;
+            font-size: 1.1em;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form button:hover {
+            background-color: #004d99;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="img/logo gmar.png" alt="Logo GMAR" class="logo">        
+        <img src="img/logo gmar.png" alt="Logo GMAR" class="logo">
+        <h1 hidden>GMAR</h1>
         <p>Gestión y Monitoreo de Acceso a Residenciales</p>
         <nav>
             <a href="#servicios">Servicios</a>
@@ -197,24 +262,24 @@
             <div class="service">
                 <img src="img/img_1.png" alt="Control de Acceso">
                 <h3>Control de Acceso</h3>
-                <p>Implementamos soluciones modernas para garantizar la seguridad en entradas y salidas.</p>
+                <p>Implementamos soluciones avanzadas para garantizar la seguridad de tu residencial.</p>
             </div>
             <div class="service">
                 <img src="img/img_2.png" alt="Monitoreo 24/7">
                 <h3>Monitoreo 24/7</h3>
-                <p>Supervisión constante para proteger residencias y áreas comunes.</p>
+                <p>Ofrecemos supervisión continua para asegurar la tranquilidad de todos los residentes.</p>
             </div>
             <div class="service">
                 <img src="img/img_3.png" alt="Registro Digital">
                 <h3>Registro Digital</h3>
-                <p>Control eficiente de visitas con registros electrónicos en tiempo real.</p>
+                <p>Registro digitalizado de visitantes para facilitar el control y aumentar la seguridad.</p>
             </div>
         </div>
     </section>
 
     <section id="nosotros">
         <h2>Nosotros</h2>
-        <p>En GMAR, nos dedicamos a ofrecer soluciones integrales de gestión y monitoreo para residenciales. Nuestra misión es brindar tranquilidad y seguridad a través de tecnología avanzada y servicios confiables. Con años de experiencia, estamos comprometidos con la excelencia y la satisfacción de nuestros clientes.</p>
+        <p>En GMAR, nos especializamos en ofrecer soluciones innovadoras y efectivas para el monitoreo y gestión del acceso a residenciales. Con una experiencia sólida, proporcionamos servicios tecnológicos avanzados que garantizan la seguridad y tranquilidad de nuestros clientes.</p>
     </section>
 
     <section id="testimonios" class="testimonials">
@@ -223,43 +288,59 @@
             <img src="img/hombre1.jpeg" alt="Juan Pérez">
             <div>
                 <h3>Juan Pérez</h3>
-                <p>"Gracias a GMAR, nuestra comunidad se siente mucho más segura. El servicio es excepcional y confiable."</p>
+                <p>"GMAR ha mejorado la seguridad en nuestra comunidad. Su servicio es rápido y confiable, lo cual nos da mucha tranquilidad."</p>
             </div>
         </div>
         <div class="testimonial">
             <img src="img/mujer1.jpeg" alt="María López">
             <div>
                 <h3>María López</h3>
-                <p>"El monitoreo 24/7 nos ha dado una gran tranquilidad. Altamente recomendados."</p>
+                <p>"Gracias a su monitoreo 24/7, tenemos paz mental sabiendo que nuestra seguridad está garantizada en todo momento."</p>
             </div>
         </div>
         <div class="testimonial">
             <img src="img/hombre2.jpeg" alt="Carlos García">
             <div>
                 <h3>Carlos García</h3>
-                <p>"La implementación del registro digital ha sido un cambio positivo para nuestra residencia. Muy satisfecho."</p>
+                <p>"El sistema de registro digital ha optimizado mucho la entrada de visitantes. ¡Es una gran solución!"</p>
             </div>
         </div>
     </section>
 
     <section id="ubicacion" class="map">
         <h2>Ubicación</h2>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509719!2d-122.41941648468193!3d37.77492927975921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064df2f123f%3A0x3456!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1617701939170!5m2!1sen!2sus" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=..."></iframe>
     </section>
 
     <section id="contacto">
         <h2>Contacto</h2>
-        <p>¿Deseas más información? Contáctanos y descubre cómo podemos ayudarte a gestionar y monitorear el acceso de tu residencial de manera eficiente.</p>
         <p><strong>Email:</strong> contacto@gmar.com</p>
         <p><strong>Teléfono:</strong> +1 (849) 457-8932</p>
+        <p>¿Deseas saber más sobre cómo podemos mejorar la seguridad y gestión de tu residencial?</p>
+        <p>Contáctanos hoy mismo.</p>
+
+        
+
+        <!-- Formulario de contacto -->
+        <form class="contact-form" action="mailto:contacto@gmar.com" method="POST" enctype="multipart/form-data">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+            <button type="submit">Enviar mensaje</button>
+        </form>
     </section>
 
     <footer>
         <p>&copy; 2025 GMAR - Todos los derechos reservados</p>
     </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/+18494578932" class="whatsapp-button" target="_blank">
+        <i class="fa fa-home"></i>
+ <!-- Usa FontAwesome para el ícono de WhatsApp -->
+    </a>
 </body>
 </html>
+
+
+
